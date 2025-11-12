@@ -1,0 +1,19 @@
+from textblob import TextBlob
+
+def sentiment_analysis():
+    print("Type 'exit' to quit.\n")
+    while True:
+        text = input("Enter text: ")
+        if text.lower() == "exit":
+            break
+        blob = TextBlob(text)
+        polarity = blob.sentiment.polarity
+        if polarity > 0:
+            print("🙂 Positive")
+        elif polarity < 0:
+            print("☹️ Negative")
+        else:
+            print("😐 Neutral")
+
+if __name__ == "__main__":
+    sentiment_analysis()
